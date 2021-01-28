@@ -19,3 +19,14 @@ getValueOnClick("btn8", "result");
 getValueOnClick("btn9", "result");
 getValueOnClick("btn10", "result");
 getValueOnClick("btn11", "result");
+
+// Save contact
+function popup() {
+  var result = document.getElementById("result");
+  var contactSection = document.getElementById("contact-section");
+  if (contactSection.style.display === "none") {
+    contactSection.style.display = "block";
+  } else {
+    contactSection.style.display = "none";
+  }
+}

@@ -43,3 +43,44 @@ ul li a {
   border-radius: 80px;
   color: white;
 }
+
+#contact-section {
+  display: none;
+  border: 1px solid #50c878;
+  margin: 10px 15px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-inp {
+  padding: 8px 15px;
+  width: 200px;
+}
+.btn-ajout {
+  font-size: 10px;
+}
+.inp-btn {
+  display: flex;
+  text-align: center;
+}
+
+.record {
+  display: flex;
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  align-items: flex-start;
+}
+.record-date {
+  color: #50c878;
+}
+.call-delete-add {
+  display: flex;
+  align-items: center;
+}
+.keyboard .button-aj {
+  font-size: 14px;
+}
