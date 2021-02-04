@@ -15,7 +15,6 @@ function save() {
     document.getElementById("result").innerText +
     "</span>" +
     "</div>";
-  ("\r\n");
   fs.appendFileSync("historique.txt", result, (err) => {
     if (err) throw err;
   });
@@ -23,18 +22,45 @@ function save() {
   alert("Appel en cours....");
 }
 
+function displayKeyboard() {
+  document.getElementById("historyy").style.display = "none";
+  document.getElementById("contactt").style.display = "none";
+  document.getElementById("keyboard").style.display = "block";
+}
+
 function display() {
-  var keyboard = (document.getElementById("keyboard").style.display = "none");
-  var historyy = (document.getElementById("historyy").style.display = "block");
+  document.getElementById("keyboard").style.display = "none";
+  document.getElementById("contactt").style.display = "none";
+  document.getElementById("historyy").style.display = "block";
+
   const history = fs.readFileSync("historique.txt", "utf8");
   document.getElementById("historyy").innerHTML = history;
 }
 
+function displayContacts() {
+  document.getElementById("keyboard").style.display = "none";
+  document.getElementById("historyy").style.display = "none";
+  document.getElementById("contactt").style.display = "block";
+
+  const contactsData = fs.readFileSync("contacts.txt", "utf8");
+  document.getElementById("contactt").innerHTML = contactsData;
+}
+
 function saveContact() {
-  var result = document.getElementById("result").innerText;
   var contactInp = document.getElementById("contact-inp").value;
-  var contact = contactInp + " - " + result + "\r\n";
-  fs.appendFileSync("contacts.txt", contact);
+  var result =
+    '<div class="record"> 👤 ' +
+    '<span class="record-date">' +
+    contactInp +
+    "</span>" +
+    '<span class="record-result">' +
+    document.getElementById("result").innerText +
+    "</span>" +
+    "</div>";
+
+  fs.appendFileSync("contacts.txt", result, (err) => {
+    if (err) throw err;
+  });
 }
 
 app.on("ready", function () {
